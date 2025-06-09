@@ -22,5 +22,10 @@ def show_information():
   return render_template('information.html', **context)
 
 
-app.run(host='0.0.0', port=5000, debug=True)
+@app.errorhandler(404)
+def page_not_found(e):
+  return render_template('404.html', error=e)
+
+
+app.run(host='0.0.0.0', port=5000, debug=True)
 
