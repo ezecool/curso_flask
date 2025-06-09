@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import 'macros.html' as macros %}
+{% block title %}
+  {{ super() }}
+  Welcome to the Information Page
+{% endblock title %}
+
+{% block content %}
+  
+  {% if user_ip_information %}
+  <h3>Hola, tu direccion Ip es <strong>{{ user_ip_information }}</strong></h3>
+  {% else %}
+  <a href="{{ url_for('index') }}">Setear Cookie</a>
+  {% endif %}
+
+  {% if products %}
+  <h4>Listado de Productos</h4>
+  <ul>
+    {% for product in products %}
+      {{ macros.render_item(product) }}
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No hay productos disponibles.</p>
+  {% endif %}
+{% endblock content %}

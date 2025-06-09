@@ -1,0 +1,23 @@
+# Archivos de entorno virtual
+venv/
+env/
+.venv/
+virtualenv/
+
+# Archivos de configuración de Flask
+app.cfg
+config.py
+
+# Archivos temporales y caché
+__pycache__/*
+.DS_Store
+
+# Archivos generados por la compilación
+build/
+dist/
+
+# Archivos de logs
+logs/*
+
+# Archivos de pruebas
+tests/
